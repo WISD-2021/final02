@@ -16,6 +16,8 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('user_id');//user_id預設是數字，因此先設數字
+            $table->String('tel');
         });
     }
 
