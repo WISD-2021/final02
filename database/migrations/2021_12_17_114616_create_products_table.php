@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table ->string('type');
             $table ->integer('price');
             $table ->integer('quan');
-            $table ->string('content');
+            $table ->text('content');
             $table ->string('pic');
             $table ->integer('status');
             $table->timestamps();
