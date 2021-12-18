@@ -14,4 +14,12 @@ class Member extends Model
         'user_id',
         'tel',
     ];
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

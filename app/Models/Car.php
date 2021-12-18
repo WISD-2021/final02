@@ -15,4 +15,8 @@ class Car extends Model
         'product_id',
         'quan',
     ];
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

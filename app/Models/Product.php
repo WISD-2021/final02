@@ -19,4 +19,8 @@ class Product extends Model
         'pic' ,
         'status' ,
     ];
+    public function orders()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

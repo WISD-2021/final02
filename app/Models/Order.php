@@ -16,4 +16,15 @@ class Order extends Model
         'date' ,
         'status' ,
     ];
+    public function members(){
+        return $this -> belongsTo(Member::class);
+    }
+    public function carts()
+    {
+        return $this->hasMany(Car::class);
+    }
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
