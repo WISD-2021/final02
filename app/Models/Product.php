@@ -19,7 +19,7 @@ class Product extends Model
         'pic' ,
         'status' ,
     ];
-    public function orders()
+    public function order()
     {
         return $this->belongsTo(Order::class);
     }
