@@ -37,6 +37,7 @@
         main{
 
             font-family:Comic Sans MS, Comic Sans, cursive;
+            text-align: center;
         }
 
     </style>
