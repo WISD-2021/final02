@@ -11,10 +11,10 @@
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
 
-                        <a class="nav-link active" aria-current="page" href="#" style="font-size:15px;color: #6b7280">主頁</a>
+                        <a class="nav-link active" aria-current="page" href="{{route('home.index')}}" style="font-size:15px;color: #6b7280">主頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size:15px;color: #6b7280">商品</a>
+                        <a class="nav-link" href="{{route('product.index')}}" style="font-size:15px;color: #6b7280">商品</a>
                     </li>
 
 

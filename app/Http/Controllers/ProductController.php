@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,26 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+
+
+        $data = DB::table('products')->get();;
+        return view('product', ['product' => $data]);
+
+    }
+    public function searchtype($type)
+    {
+
+
+        $data = DB::table('products')->where('type',$type)->get();
+        return view('product', ['product' => $data]);
+
+    }
+    public function searchname($name)
+    {
+       // $name=$_GET['search'];
+        $data = DB::table('products')->where('name',$name)->get();
+        return view('product', ['product' => $data]);
+
     }
 
     /**

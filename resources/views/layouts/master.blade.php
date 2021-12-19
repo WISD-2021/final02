@@ -37,6 +37,11 @@
             margin:3%;
 
         }
+        .search{
+            float:left;
+            padding: 5px;
+
+        }
 
 
 
