@@ -19,6 +19,7 @@ Route::get('/product', [\App\Http\Controllers\ProductController::class, 'index']
 Route::get('/product/{type}', [\App\Http\Controllers\ProductController::class, 'searchtype'])->name('product.searchtype');
 Route::get('/product/{name}', [\App\Http\Controllers\ProductController::class, 'searchname'])->name('product.searchname');
 Route::get('/car', [\App\Http\Controllers\CarController::class, 'index'])->name('car.index');
+Route::get('/favor', [\App\Http\Controllers\FavoriteController::class, 'index'])->name('favor.index');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
