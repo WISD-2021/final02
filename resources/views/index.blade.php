@@ -24,6 +24,9 @@
                     <li class="nav-item" >
                     @if(\Illuminate\Support\Facades\Auth::check())
                         <li class="nav-item">
+                            <a class="nav-link" href="{{route('favor.index')}}" style="font-size:15px;color: #6b7280">我的最愛</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
                                onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();">
