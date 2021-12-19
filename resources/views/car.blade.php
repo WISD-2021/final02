@@ -16,7 +16,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('product.index')}}" style="font-size:15px;color: #6b7280">商品</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('car.index')}}" style="font-size:15px;color: #6b7280">購物車</a>
+                    </li>
 
 
                     <li class="nav-item" >
