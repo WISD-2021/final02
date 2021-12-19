@@ -16,7 +16,7 @@
             float:left;
 
             margin-left:10%;
-            margin-right:10%;
+            margin-right:5%;
             margin-top:2%;
             margin-bottom:2%;
 
@@ -31,6 +31,12 @@
             max-width: 100%;
             max-height: 100%;
         }
+        .icon{
+            float:left;
+            padding-left: 5px;
+            margin:3%;
+
+        }
 
 
 
@@ -38,6 +44,7 @@
 
             font-family:Comic Sans MS, Comic Sans, cursive;
             text-align: center;
+
         }
 
     </style>
@@ -45,11 +52,12 @@
 
 <body >
 
-
+<div class="container">
 <nav class="navbar navbar-fixed-bottom text-center" style="background-color: lavender">
 
     <p class="float-end"><a href="#" style="font-size:25px;color: #6b7280" >Back to top</a></p>
 </nav>
+</div>
 </body>
 
 
