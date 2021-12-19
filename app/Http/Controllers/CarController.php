@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class CarController extends Controller
 {
@@ -15,7 +17,18 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        if(\Illuminate\Support\Facades\Auth::check())
+        {
+        $data = DB::table('cars')->where('member_id',auth()->user()->id)->get();
+        return view('car', ['car' => $data]);
+        }
+        else
+        {
+            echo "<script>alert('尚未登入')</script>";
+            return redirect()->route('login');
+
+        }
+
     }
 
     /**
