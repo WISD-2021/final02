@@ -22,6 +22,8 @@
 
         }
 
+
+
         .t_div {
             width: 200px;
             height: 200px;
@@ -35,6 +37,13 @@
             float:left;
             padding-left: 5px;
             margin:3%;
+
+        }
+        .icon2{
+            float:left;
+            margin-left:60px;
+            max-width: 100%;
+            max-height: 100%;
 
         }
         .search{

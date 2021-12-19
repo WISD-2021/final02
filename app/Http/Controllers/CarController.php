@@ -20,7 +20,8 @@ class CarController extends Controller
         if(\Illuminate\Support\Facades\Auth::check())
         {
         $data = DB::table('cars')->where('member_id',auth()->user()->id)->get();
-        return view('car', ['car' => $data]);
+        $p_data = DB::table('products')->get();
+        return view('car', ['car' => $data],['product'=> $p_data]);
         }
         else
         {
