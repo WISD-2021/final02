@@ -10,6 +10,9 @@
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
+                        <a class="nav-link"  style="font-size:15px;color: #6b7280">歡迎使用者:&nbsp;<?php $un=auth()->user()->name; echo $un;?></a>
+                    </li>
+                    <li class="nav-item">
 
                         <a class="nav-link active" aria-current="page" href="{{route('home.index')}}" style="font-size:15px;color: #6b7280">主頁</a>
                     </li>
