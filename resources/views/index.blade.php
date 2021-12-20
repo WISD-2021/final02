@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
-                        <a class="nav-link"  style="font-size:15px;color: #6b7280">&nbsp;<?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者:".$un;}else{}?></a>
+                        <a class="nav-link"  style="font-size:15px;color: #6b7280"><?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者:".$un;}else{}?></a>
                     </li>
                     <li class="nav-item">
 
