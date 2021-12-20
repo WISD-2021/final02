@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
-                        <a class="nav-link"  style="font-size:15px;color: #6b7280"><?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者:".$un;}else{}?></a>
+                        <a class="nav-link"  style="font-size:15px;color: #6b7280"><?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者&nbsp;".$un;}else{}?></a>
                     </li>
                     <li class="nav-item">
 
@@ -76,9 +76,9 @@
         <li class="nav-item">
             <div>
 {{--                <form method="GET" action='product.searchname'>--}}
-                <form method="GET" action='{{route('product.searchtype','yy')}}'> <!--想從input text 取值但是不行 -->
+                <form method="GET" action='{{route('product.searchname')}}'> <!--想從input text 取值但是不行 -->
                 <div class="search">
-                    <input type="text" id="search" name="search" >
+                    <input type="text" id="search1" name="search1" >
 
                 </div>
 

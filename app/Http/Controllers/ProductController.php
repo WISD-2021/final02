@@ -30,10 +30,11 @@ class ProductController extends Controller
         return view('product', ['product' => $data]);
 
     }
-    public function searchname($name)
+    public function searchname()
     {
-       // $name=$_GET['search'];
-        $data = DB::table('products')->where('name',$name)->get();
+       $name=$_GET['search1'];
+
+        $data = DB::table('products')->where('name','like' ,'%'.$name.'%')->get();
         return view('product', ['product' => $data]);
 
     }
