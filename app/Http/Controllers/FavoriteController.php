@@ -48,9 +48,43 @@ class FavoriteController extends Controller
      */
     public function store(StoreFavoriteRequest $request)
     {
-        //
+
+    }
+    public function  add($id) //store方法怪怪的，先自行創造add方法使用
+      {
+          $addOK=0; //讓我的最愛裡不會有重複的商品
+          if(\Illuminate\Support\Facades\Auth::check())
+       {
+           $data = DB::table('favorites')->where('product_id',$id)->get();
+           foreach ($data as $dates)
+           {
+               if($dates->member_id==auth()->user()->id)
+                   $addOK=1;
+           }
+           if ($addOK==0){
+             DB::table('favorites')->insert(
+             [
+
+                'member_id'=>auth()->user()->id,
+                'product_id'=>$id
+
+             ]
+          );
+           echo "<script>alert('已加入我的最愛'); location.href ='../';</script>";
+           }
+           else if($addOK==1) {
+             //  "<script>alert('已存在該商品'); location.href ='../';</script>"; 這種跳轉才會有訊息，但不知為何在這怪怪的
+               return redirect()->route('home.index');//先以不跳訊息的方式呈現
+           }
+      }
+    else
+    {
+        echo "<script >alert('尚未登入')</script>";
+        return redirect()->route('login');
+
     }
 
+}
     /**
      * Display the specified resource.
      *
@@ -93,6 +127,30 @@ class FavoriteController extends Controller
      */
     public function destroy(Favorite $favorite)
     {
-        //
+//     怪怪的無法使用   if(\Illuminate\Support\Facades\Auth::check())
+//        {
+//
+//        Favorite::destroy($favorite);
+//            return redirect()->route('favor.index');
+//
+//        }
+//        else
+//        {
+//        return redirect()->route('login');
+//        }
+    }
+    public function delete($id)
+    { //先自行設定delete方法
+        if(\Illuminate\Support\Facades\Auth::check())
+        {
+
+        Favorite::destroy($id);
+            return redirect()->route('favor.index');
+
+        }
+        else
+        {
+        return redirect()->route('login');
+        }
     }
 }

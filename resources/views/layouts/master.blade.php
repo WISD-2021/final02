@@ -46,6 +46,13 @@
             max-height: 100%;
 
         }
+        .icon3{
+            float:left;
+            padding-left: 5px;
+            margin:5%;
+
+
+        }
         .search{
             float:left;
             padding: 5px;
