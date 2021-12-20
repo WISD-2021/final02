@@ -27,6 +27,9 @@
                             <a class="nav-link" href="{{route('favor.index')}}" style="font-size:15px;color: #6b7280">我的最愛</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="" style="font-size:15px;color: #6b7280">訂單管理</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
                                onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();">
