@@ -59,7 +59,7 @@
     </nav>
 </header>
 <main>
-    <h1>我的最愛</h1>
+    <center> <h1>我的最愛</h1></center>
     @foreach ($favorite as $favorites)
         @foreach ($product as $products)
             @if($favorites->product_id==$products->id)

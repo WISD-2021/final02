@@ -65,18 +65,18 @@
             <a class="nav-link active" aria-current="page" href="{{route('product.index')}}">全部</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('product.searchtype','aa')}}">AA類票劵</a>
+            <a class="nav-link" href="{{route('product.searchtype','主題樂園')}}">主題樂園</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('product.searchtype','yy')}}">YY類票劵</a>
+            <a class="nav-link" href="{{route('product.searchtype','展覽')}}">展覽</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link">CC類</a>
+            <a class="nav-link" href="{{route('product.searchtype','電影')}}">電影</a>
         </li>
         <li class="nav-item">
             <div>
 {{--                <form method="GET" action='product.searchname'>--}}
-                <form method="GET" action='{{route('product.searchname')}}'> <!--想從input text 取值但是不行 -->
+                <form method="GET" action='{{route('product.searchname')}}'>
                 <div class="search">
                     <input type="text" id="search1" name="search1" >
 

@@ -59,7 +59,7 @@
     </nav>
 </header>
 <main>
-    <h1> 購物車</h1>
+    <center><h1> 購物車</h1></center>
     @foreach ($car as $carts)
         @foreach ($product as $products)
             @if($carts->product_id==$products->id)
