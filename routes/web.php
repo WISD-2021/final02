@@ -23,6 +23,8 @@ Route::get('/favor', [\App\Http\Controllers\FavoriteController::class, 'index'])
 Route::get('/favor/{id}', [\App\Http\Controllers\FavoriteController::class, 'add'])->name('favor.add');
 Route::get('/favordelete/{id}', [\App\Http\Controllers\FavoriteController::class, 'delete'])->name('favor.delete');
 // 無法正常使用 Route::get('/favordelete/{id}', [\App\Http\Controllers\FavoriteController::class, 'destroy'])->name('favor.delete');
+Route::get('/car/{id}', [\App\Http\Controllers\CarController::class, 'add'])->name('car.add');
+Route::get('/cardelete/{id}', [\App\Http\Controllers\CarController::class, 'delete'])->name('car.delete');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
