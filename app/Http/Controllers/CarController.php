@@ -106,6 +106,24 @@ class CarController extends Controller
         );
        $data = DB::table('cars')->where('id',$id)->get();
        $p_data = DB::table('products')->get();
+        $_SESSION['p1']=0;
+//foreach ($data as $datas)
+//{
+//
+//    foreach ($p_data as $ps) {
+//        if ($ps->id ==  $datas->product_id) {
+//            $_SESSION['p1']=$ps->price;
+//
+//        }
+//    }
+//}  有bug
+
+
+
+session_start();
+$_SESSION['qu1']=$new_qu;
+$_SESSION['total']=$_SESSION['qu1'] * $_SESSION['p1'];
+$_SESSION['c_id']=$id;
        return view('check', ['check' => $data],['product'=> $p_data]);
 
     }

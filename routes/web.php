@@ -27,6 +27,7 @@ Route::get('/favordelete/{id}', [\App\Http\Controllers\FavoriteController::class
 Route::get('/car/{id}', [\App\Http\Controllers\CarController::class, 'add'])->name('car.add');
 Route::get('/cardelete/{id}', [\App\Http\Controllers\CarController::class, 'delete'])->name('car.delete');
 Route::get('/carcheck/{id}', [\App\Http\Controllers\CarController::class, 'check'])->name('car.check');
+Route::get('/orderadd/{id}', [\App\Http\Controllers\OrderController::class, 'add'])->name('order.add');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
