@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
-                        <a class="nav-link"  style="font-size:15px;color: #6b7280"><?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者:".$un;}else{}?></a>
+                        <a class="nav-link"  style="font-size:15px;color: #6b7280"><?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者:&nbsp;".$un;}else{}?></a>
                     </li>
                     <li class="nav-item">
 
@@ -59,7 +59,7 @@
     </nav>
 </header>
 <main>
-    <h1> 購物車</h1>
+    <center><h1> 購物車</h1></center>
     @foreach ($car as $carts)
         @foreach ($product as $products)
             @if($carts->product_id==$products->id)
@@ -67,12 +67,15 @@
                 <div>
                     <h3> 票券名稱: <a>{{$products->name}}</a></h3><br>
                     <h4> 單價:<a>{{$products->price}}</a></h4><br>
-                    <h4>數量:<a>{{$carts->quan}}</a></h4><br>
+
+
                     <div class="t_div" >
 
                         <img class="t_img" src="../img/ticket/{{$products->pic}}"><br>
+                    </div>
                     <div class="icon3">
-                        <form action=''>
+                        <form  method="GET"  action='{{route('car.check',$carts->id)}}'>
+                            <h4>數量:<input type='number' name='qu' step='1' min='1' max='10' value={{$carts->quan}}></h4><br>
                             <button class="btn btn-outline-dark" type="submit" style="background-color: lavender" >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
@@ -81,8 +84,12 @@
                                     <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
                                 </svg>  &nbsp;下訂單
                             </button>
+
                         </form>
                     </div>
+
+
+            </div>
                         <div class="icon3">
                             <form action='{{route('car.delete',$carts->id)}}'>
                                 <button class="btn btn-outline-dark" type="submit" style="background-color: lavender" >

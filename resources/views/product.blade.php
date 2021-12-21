@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
-                        <a class="nav-link"  style="font-size:15px;color: #6b7280"><?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者:".$un;}else{}?></a>
+                        <a class="nav-link"  style="font-size:15px;color: #6b7280"><?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者&nbsp;".$un;}else{}?></a>
                     </li>
                     <li class="nav-item">
 
@@ -65,20 +65,20 @@
             <a class="nav-link active" aria-current="page" href="{{route('product.index')}}">全部</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('product.searchtype','aa')}}">AA類票劵</a>
+            <a class="nav-link" href="{{route('product.searchtype','主題樂園')}}">主題樂園</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('product.searchtype','yy')}}">YY類票劵</a>
+            <a class="nav-link" href="{{route('product.searchtype','展覽')}}">展覽</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link">CC類</a>
+            <a class="nav-link" href="{{route('product.searchtype','電影')}}">電影</a>
         </li>
         <li class="nav-item">
             <div>
 {{--                <form method="GET" action='product.searchname'>--}}
-                <form method="GET" action='{{route('product.searchtype','yy')}}'> <!--想從input text 取值但是不行 -->
+                <form method="GET" action='{{route('product.searchname')}}'>
                 <div class="search">
-                    <input type="text" id="search" name="search" >
+                    <input type="text" id="search1" name="search1" >
 
                 </div>
 

@@ -15,8 +15,8 @@
         .m1_div{
             float:left;
 
-            margin-left:10%;
-            margin-right:5%;
+            margin-left:5%;
+
             margin-top:2%;
             margin-bottom:2%;
 
@@ -53,6 +53,7 @@
 
 
         }
+
         .search{
             float:left;
             padding: 5px;
@@ -64,7 +65,7 @@
         main{
 
             font-family:Comic Sans MS, Comic Sans, cursive;
-            text-align: center;
+
 
         }
 

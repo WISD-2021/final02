@@ -70,7 +70,7 @@ class CarController extends Controller
 
                         'member_id'=>auth()->user()->id,
                         'product_id'=>$id,
-                        'quan'=>1   //因傳值部分有問題先寫死測試
+                        'quan'=>1
 
 
                     ]
@@ -88,6 +88,25 @@ class CarController extends Controller
             return redirect()->route('login');
 
         }
+
+    }
+    public function  check($id)
+    {
+
+       $new_qu=$_GET['qu'];
+        DB::table('cars')->where('id',$id)->update(
+            [
+
+
+
+                'quan'=>$new_qu
+
+
+            ]
+        );
+       $data = DB::table('cars')->where('id',$id)->get();
+       $p_data = DB::table('products')->get();
+       return view('check', ['check' => $data],['product'=> $p_data]);
 
     }
 
