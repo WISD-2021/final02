@@ -28,3 +28,17 @@ Route::get('/cardelete/{id}', [\App\Http\Controllers\CarController::class, 'dele
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//後台
+Route::prefix('admin')->group(function () {
+    Route::get('/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard.index');
+
+    /*Route::get('posts', [AdminPostsController::class, 'index'])->name('admin.posts.index');
+    Route::get('posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
+    Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
+    Route::patch('posts/{post}',[AdminPostsController::class,'update'])->name('admin.posts.update');
+    Route::post('posts',[AdminPostsController::class,'store'])->name('admin.posts.store');
+    Route::delete('posts/{post}',[AdminPostsController::class,'destroy'])->name('admin.posts.destroy');
+*/
+});
+
