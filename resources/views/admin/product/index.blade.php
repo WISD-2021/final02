@@ -35,6 +35,7 @@
                         <th>標題</th>
                         <th width="70" style="text-align: center">定價</th>
                         <th width="70" style="text-align: center">庫存</th>
+                        <th width="100" style="text-align: center">商品狀態</th>
                         <th width="120" style="text-align: center">功能</th>
                     </tr>
                     </thead>
@@ -45,6 +46,11 @@
                             <td>{{ $products->name }}</td>
                             <td style="text-align: center">{{ $products->price }}</td>
                             <td style="text-align: center">{{ $products->quan }}</td>
+                            @if($products->status = 1)
+                                <td style="text-align: center">已上架</td>
+                            @else
+                                <td style="text-align: center">未上架</td>
+                            @endif
                             <td style="text-align: center">
                                 <a href="#">編輯</a>
                                 /
