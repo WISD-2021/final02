@@ -73,7 +73,7 @@
 
                             <img class="t_img" src="../img/ticket/{{$products->pic}}"><br>
                         </div>
-                        <h4> 總計:<a><?php echo $_SESSION['total']; echo $_SESSION['p1'] ;?></a></h4><br>
+                        <h4> 總計:<a><?php echo $_SESSION['total']; ?></a></h4><br>
                         <div class="icon3">
                             <form  method="GET"  action='{{route('order.add',$checks->id)}}'>
 

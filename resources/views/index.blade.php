@@ -30,7 +30,7 @@
                             <a class="nav-link" href="{{route('favor.index')}}" style="font-size:15px;color: #6b7280">我的最愛</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="" style="font-size:15px;color: #6b7280">訂單管理</a>
+                            <a class="nav-link" href="{{route('order.index')}}" style="font-size:15px;color: #6b7280">訂單管理</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
@@ -66,7 +66,7 @@
 
                     <h3> 票券名稱: <a>{{$products->name}}</a></h3><br>
                     <h4> 單價:<a>{{$products->price}}</a></h4><br>
-                    <h4>數量:<a>{{$products->quan}}</a></h4><br>
+{{--                    <h4>數量:<a>{{$products->quan}}</a></h4><br>--}}
                     詳細資料:  <p class="card-text">{{$products->content}}</p>
 
                     <div class="t_div" >

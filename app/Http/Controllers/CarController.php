@@ -106,21 +106,20 @@ class CarController extends Controller
         );
        $data = DB::table('cars')->where('id',$id)->get();
        $p_data = DB::table('products')->get();
-        $_SESSION['p1']=0;
-//foreach ($data as $datas)
-//{
-//
-//    foreach ($p_data as $ps) {
-//        if ($ps->id ==  $datas->product_id) {
-//            $_SESSION['p1']=$ps->price;
-//
-//        }
-//    }
-//}  有bug
 
+foreach ($data as $datas)
+{
 
+    foreach ($p_data as $ps) {
+        if ( $datas->product_id==$ps->id  ) {
+           $price=$ps->price;    //抓car資料表的商品id,再從商品id抓商品價格
+
+        }
+    }
+}
 
 session_start();
+$_SESSION['p1']=$price;
 $_SESSION['qu1']=$new_qu;
 $_SESSION['total']=$_SESSION['qu1'] * $_SESSION['p1'];
 $_SESSION['c_id']=$id;

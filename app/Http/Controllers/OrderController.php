@@ -17,9 +17,35 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $data = DB::table('orders')->get();;
+        $p_data = DB::table('products')->get();
+        return view('orders', ['order' => $data],['product'=> $p_data]);
+    }
+    public function searchstatus($status)
+    {
+
+
+        $data = DB::table('orders')->where('status',$status)->get();
+        $p_data = DB::table('products')->get();
+        return view('orders', ['order' => $data],['product'=> $p_data]);
 
     }
+    public  function  use($id){
 
+        DB::table('orders')->where('id',$id)->update(
+            [
+
+
+
+                'status'=>1
+
+
+            ]
+        );
+        $data = DB::table('orders')->get();;
+        $p_data = DB::table('products')->get();
+        return view('orders', ['order' => $data],['product'=> $p_data]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -45,7 +71,7 @@ class OrderController extends Controller
 
         if(\Illuminate\Support\Facades\Auth::check())
         {
-session_start();
+               session_start();
                 DB::table('orders')->insert(
                     [
 
@@ -59,10 +85,14 @@ session_start();
                     ]
                 );
             Car::destroy($_SESSION['c_id']);
-            $_SESSION['c_id']=0;
-            $_SESSION['total']=0;
-            $_SESSION['qu1']=0;
-            $_SESSION['p1']=0;
+//            $_SESSION['c_id']=0;
+//            $_SESSION['total']=0;
+//            $_SESSION['qu1']=0;
+//            $_SESSION['p1']=0;
+            unset($_SESSION['c_id']);
+            unset($_SESSION['total']);
+            unset($_SESSION['qu1']);
+            unset($_SESSION['p1']);
                 echo "<script>alert('已送出'); location.href ='../';</script>";
             }
 
