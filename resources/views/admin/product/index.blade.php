@@ -20,7 +20,7 @@
 
     <div class="row" style="margin-bottom: 20px; text-align: right">
         <div class="col-lg-12">
-            <a href="#" class="btn btn-success">建立新文章</a>
+            <a href="#" class="btn btn-success">新增新商品</a>
         </div>
     </div>
     <!-- /.row -->
@@ -46,7 +46,7 @@
                             <td>{{ $products->name }}</td>
                             <td style="text-align: center">{{ $products->price }}</td>
                             <td style="text-align: center">{{ $products->quan }}</td>
-                            @if($products->status = 1)
+                            @if($products->status == 1)
                                 <td style="text-align: center">已上架</td>
                             @else
                                 <td style="text-align: center">未上架</td>
@@ -54,11 +54,7 @@
                             <td style="text-align: center">
                                 <a href="#">編輯</a>
                                 /
-                                <form action="#" method="POST" style="display:inline">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button class="btn btn-sm btn-danger" type="submit">刪除</button>
-                                </form>
+                                <a href="{{ route('admin.product.delete',$products->id) }}" class="btn btn-sm btn-danger" onClick="return confirm('確定要刪除此商品?')">刪除</a>
                             </td>
                         </tr>
                     @endforeach
