@@ -112,7 +112,7 @@ foreach ($data as $datas)
 
     foreach ($p_data as $ps) {
         if ( $datas->product_id==$ps->id  ) {
-           $price=$ps->price;
+           $price=$ps->price;    //抓car資料表的商品id,再從商品id抓商品價格
 
         }
     }

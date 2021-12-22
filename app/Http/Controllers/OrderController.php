@@ -71,7 +71,7 @@ class OrderController extends Controller
 
         if(\Illuminate\Support\Facades\Auth::check())
         {
-session_start();
+               session_start();
                 DB::table('orders')->insert(
                     [
 
