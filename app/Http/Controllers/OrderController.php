@@ -59,10 +59,14 @@ session_start();
                     ]
                 );
             Car::destroy($_SESSION['c_id']);
-            $_SESSION['c_id']=0;
-            $_SESSION['total']=0;
-            $_SESSION['qu1']=0;
-            $_SESSION['p1']=0;
+//            $_SESSION['c_id']=0;
+//            $_SESSION['total']=0;
+//            $_SESSION['qu1']=0;
+//            $_SESSION['p1']=0;
+            unset($_SESSION['c_id']);
+            unset($_SESSION['total']);
+            unset($_SESSION['qu1']);
+            unset($_SESSION['p1']);
                 echo "<script>alert('已送出'); location.href ='../';</script>";
             }
 
