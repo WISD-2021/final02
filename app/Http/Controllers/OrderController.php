@@ -17,9 +17,35 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $data = DB::table('orders')->get();;
+        $p_data = DB::table('products')->get();
+        return view('orders', ['order' => $data],['product'=> $p_data]);
+    }
+    public function searchstatus($status)
+    {
+
+
+        $data = DB::table('orders')->where('status',$status)->get();
+        $p_data = DB::table('products')->get();
+        return view('orders', ['order' => $data],['product'=> $p_data]);
 
     }
+    public  function  use($id){
 
+        DB::table('orders')->where('id',$id)->update(
+            [
+
+
+
+                'status'=>1
+
+
+            ]
+        );
+        $data = DB::table('orders')->get();;
+        $p_data = DB::table('products')->get();
+        return view('orders', ['order' => $data],['product'=> $p_data]);
+    }
     /**
      * Show the form for creating a new resource.
      *
