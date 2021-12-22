@@ -39,8 +39,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::prefix('admin')->group(function () {
     Route::get('/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard.index');
 
-    /*Route::get('posts', [AdminPostsController::class, 'index'])->name('admin.posts.index');
-    Route::get('posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
+    Route::get('product', [\App\Http\Controllers\AdminProductController::class, 'index'])->name('admin.product.index');
+   /* Route::get('posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
     Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
     Route::patch('posts/{post}',[AdminPostsController::class,'update'])->name('admin.posts.update');
     Route::post('posts',[AdminPostsController::class,'store'])->name('admin.posts.store');
