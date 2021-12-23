@@ -67,7 +67,7 @@
                     <h3> 票券名稱: <a>{{$products->name}}</a></h3><br>
                     <h4> 單價:<a>{{$products->price}}</a></h4><br>
 {{--                    <h4>數量:<a>{{$products->quan}}</a></h4><br>--}}
-                    詳細資料:  <p class="card-text">{{$products->content}}</p>
+                    詳細資料:<br><p style="white-space: pre-line">{{$products->content}}</p><br>
 
                     <div class="t_div" >
 
