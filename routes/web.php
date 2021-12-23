@@ -53,9 +53,10 @@ Route::prefix('admin')->group(function () {
 
     Route::get('product', [\App\Http\Controllers\AdminProductController::class, 'index'])->name('admin.product.index');
     Route::get('product/{id}',[\App\Http\Controllers\AdminProductController::class,'delete'])->name('admin.product.delete');
+    Route::get('product/{id}/edit', [\App\Http\Controllers\AdminProductController::class, 'edit'])->name('admin.product.edit');
+    Route::patch('product/{id}',[\App\Http\Controllers\AdminProductController::class,'update'])->name('admin.product.update');
     /* Route::get('posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
     Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
-    Route::patch('posts/{post}',[AdminPostsController::class,'update'])->name('admin.posts.update');
     Route::post('posts',[AdminPostsController::class,'store'])->name('admin.posts.store');
 */
 });
