@@ -50,8 +50,8 @@
             </div>
 
             <div class="form-group">
-                <label for="quantity">票券數量：</label>
-                <input name="quantity" class="form-control" placeholder="票券數量" value="{{old('name',$product->quan)}}">
+                <label for="quan">票券數量：</label>
+                <input name="quan" class="form-control" placeholder="票券數量" value="{{old('name',$product->quan)}}">
             </div>
 
             <div class="form-group">

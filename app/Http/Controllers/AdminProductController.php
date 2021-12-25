@@ -39,19 +39,9 @@ class AdminProductController extends Controller
     public function update(Request $request, $id)
     {
         $product=Product::find($id);
-        $product->update(['name' => $_POST['name']]);
-        $product->update(['type' => $_POST['type']]);
-        $product->update(['price' => $_POST['price']]);
-        $product->update(['quan' => $_POST['quantity']]);
-        $product->update(['content' => $_POST['content']]);
-        $product->update(['pic' => $_POST['pic']]);
 
-        if($_POST['status']=='未上架')
-            $product->update(['status' => '0']);
-        else
-            $product->update(['status' => '1']);
+        $product->update($request->all());
 
-        //$product->update($request->all()); 無法成功
         return redirect()->route('admin.products.index');
     }
 
