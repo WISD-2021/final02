@@ -19,14 +19,21 @@
                     <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                    <a href="#"><i class="fa fa-fw fa-envelope"></i>Inbox</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a class="nav-link" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
+                       onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                        Log out
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </li>
             </ul>
         </li>

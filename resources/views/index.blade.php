@@ -26,22 +26,26 @@
 
                     <li class="nav-item" >
                     @if(\Illuminate\Support\Facades\Auth::check())
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('favor.index')}}" style="font-size:15px;color: #6b7280">我的最愛</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('order.index')}}" style="font-size:15px;color: #6b7280">訂單管理</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
-                               onclick="event.preventDefault();
-                       document.getElementById('logout-form').submit();">
-                                {{ __('登出') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
+                        @if(Auth::user()->type == '1')
+                            <script>alert('管理者登入成功');window.location.href='{{ route('admin.dashboard.index') }}'</script>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('favor.index')}}" style="font-size:15px;color: #6b7280">我的最愛</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('order.index')}}" style="font-size:15px;color: #6b7280">訂單管理</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
+                                   onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                                    {{ __('登出') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        @endif
                     @else
                         <li class="nav-item">
                             <a class="nav-link" style="font-size:15px;color: #6b7280" href="{{ route('login') }}">登入</a>
