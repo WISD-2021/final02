@@ -16,13 +16,24 @@ class AdminProductController extends Controller
     public function index()
     {
         $data = DB::table('products')->orderBy('id','ASC')->get();
-        return view('admin.product.index', ['product' => $data]);
+        return view('admin.products.index', ['product' => $data]);
+        //return view('admin.products.create');
+    }
+
+    public function create()
+    {
+        return view('admin.products.create');
+    }
+    public function store(Request $request)
+    {
+        Product::create($request->all());
+        return redirect()->route('admin.products.index');
     }
 
     public function edit($id)
     {
         $data = Product::find($id);
-        return view('admin.product.edit', ['product' => $data]);
+        return view('admin.products.edit', ['product' => $data]);
     }
 
     public function update(Request $request, $id)
@@ -41,12 +52,12 @@ class AdminProductController extends Controller
             $product->update(['status' => '1']);
 
         //$product->update($request->all()); 無法成功
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function delete($id)
     {
         Product::destroy($id);
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.products.index');
     }
 }

@@ -47,7 +47,7 @@
                 <a href="#"><i class="fa fa-fw fa-edit"></i> 我的最愛管理</a>
             </li>
             <li>
-                <a href="{{ route('admin.product.index') }}"><i class="fa fa-fw fa-edit"></i> 票券管理</a>
+                <a href="{{ route('admin.products.index') }}"><i class="fa fa-fw fa-edit"></i> 票券管理</a>
             </li>
         </ul>
     </div>

@@ -20,7 +20,7 @@
 
     <div class="row" style="margin-bottom: 20px; text-align: right">
         <div class="col-lg-12">
-            <a href="#" class="btn btn-success">新增新票券</a>
+            <a href="{{ route('admin.products.create') }}" class="btn btn-success">新增票券</a>
         </div>
     </div>
     <!-- /.row -->
@@ -52,9 +52,9 @@
                                 <td style="text-align: center">未上架</td>
                             @endif
                             <td style="text-align: center">
-                                <a href="{{ route('admin.product.edit', $products->id) }}" class="btn btn-sm btn-primary">編輯</a>
+                                <a href="{{ route('admin.products.edit', $products->id) }}" class="btn btn-sm btn-primary">編輯</a>
                                 /
-                                <a href="{{ route('admin.product.delete',$products->id) }}" class="btn btn-sm btn-danger" onClick="return confirm('確定要刪除此商品?')">刪除</a>
+                                <a href="{{ route('admin.products.delete',$products->id) }}" class="btn btn-sm btn-danger" onClick="return confirm('確定要刪除此商品?')">刪除</a>
                             </td>
                         </tr>
                     @endforeach

@@ -49,15 +49,20 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //後台
 Route::prefix('admin')->group(function () {
-    Route::get('/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard.index');
+     Route::get('/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard.index');
 
-    Route::get('product', [\App\Http\Controllers\AdminProductController::class, 'index'])->name('admin.product.index');
-    Route::get('product/{id}',[\App\Http\Controllers\AdminProductController::class,'delete'])->name('admin.product.delete');
-    Route::get('product/{id}/edit', [\App\Http\Controllers\AdminProductController::class, 'edit'])->name('admin.product.edit');
-    Route::patch('product/{id}',[\App\Http\Controllers\AdminProductController::class,'update'])->name('admin.product.update');
-    /* Route::get('posts/create', [AdminPostsController::class, 'create'])->name('admin.posts.create');
-    Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
-    Route::post('posts',[AdminPostsController::class,'store'])->name('admin.posts.store');
-*/
+     Route::get('products', [\App\Http\Controllers\AdminProductController::class, 'index'])->name('admin.products.index');
+     //新增票券
+     Route::get('products/create', [\App\Http\Controllers\AdminProductController::class, 'create'])->name('admin.products.create');
+     Route::get('products/{id}/edit', [\App\Http\Controllers\AdminProductController::class, 'edit'])->name('admin.products.edit');
+     //儲存票券
+     Route::post('products',[\App\Http\Controllers\AdminProductController::class,'store'])->name('admin.products.store');
+     Route::patch('products/{id}',[\App\Http\Controllers\AdminProductController::class,'update'])->name('admin.products.update');
+     Route::get('products/{id}',[\App\Http\Controllers\AdminProductController::class,'delete'])->name('admin.products.delete');
+
+
+     /*Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name('admin.posts.edit');
+     Route::post('posts',[AdminPostsController::class,'store'])->name('admin.posts.store');
+ */
 });
 
