@@ -75,7 +75,7 @@
                         </div>
                         <h4> 總計:<a><?php echo $_SESSION['total']; ?></a></h4><br>
                         <div class="icon3">
-                            <form  method="GET"  action='{{route('order.add',$checks->id)}}'>
+                            <form  method="GET"  action='{{route('order.add',$products->id)}}'>
 
                                 <button class="btn btn-outline-dark" type="submit" style="background-color: lavender" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
