@@ -19,14 +19,21 @@
                     <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                    <a href="#"><i class="fa fa-fw fa-envelope"></i>Inbox</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a class="nav-link" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
+                       onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                        Log out
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </li>
             </ul>
         </li>
@@ -47,7 +54,7 @@
                 <a href="#"><i class="fa fa-fw fa-edit"></i> 我的最愛管理</a>
             </li>
             <li>
-                <a href="{{ route('admin.product.index') }}"><i class="fa fa-fw fa-edit"></i> 商品管理</a>
+                <a href="{{ route('admin.products.index') }}"><i class="fa fa-fw fa-edit"></i> 票券管理</a>
             </li>
         </ul>
     </div>

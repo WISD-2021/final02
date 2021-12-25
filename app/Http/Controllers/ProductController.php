@@ -19,7 +19,7 @@ class ProductController extends Controller
 
 
         $data = DB::table('products')->get();;
-        return view('product', ['products' => $data]);
+        return view('product', ['product' => $data]);
 
     }
     public function searchtype($type)
