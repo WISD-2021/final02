@@ -19,6 +19,18 @@
 <!-- /.row -->
 
 <div class="row">
+    <?php
+    $product = DB::table('products')->orderBy('id','ASC')->get();?>
+    @foreach($product as $products)
+        @if($products->status==0)
+            <div class="col-lg-12">
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="fa fa-info-circle"></i>  <strong>通知！</strong>{{ $products->name }}尚未上架!
+                </div>
+            </div>
+        @endif
+    @endforeach
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
