@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->integer('member_id');
             $table->integer('product_id');
             $table->integer('total');
+            $table->integer('quan');
             $table->date('date');
             $table->integer('status');
             $table->timestamps();
