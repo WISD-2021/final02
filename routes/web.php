@@ -68,5 +68,8 @@ Route::prefix('admin')->group(function () {
      //查閱會員我的最愛
      Route::get('favorites', [\App\Http\Controllers\AdminFavoriteController::class, 'index'])->name('admin.favorites.index');
 
+     //查閱會員訂單
+     Route::get('orders', [\App\Http\Controllers\AdminOrderController::class, 'index'])->name('admin.orders.index');
+
 });
 
