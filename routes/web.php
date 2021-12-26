@@ -49,15 +49,24 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //後台
 Route::prefix('admin')->group(function () {
+     //主控台
      Route::get('/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard.index');
 
+     //票券管理頁面
      Route::get('products', [\App\Http\Controllers\AdminProductController::class, 'index'])->name('admin.products.index');
      //新增票券
      Route::get('products/create', [\App\Http\Controllers\AdminProductController::class, 'create'])->name('admin.products.create');
+     //編輯票券
      Route::get('products/{id}/edit', [\App\Http\Controllers\AdminProductController::class, 'edit'])->name('admin.products.edit');
      //儲存票券
      Route::post('products',[\App\Http\Controllers\AdminProductController::class,'store'])->name('admin.products.store');
+     //更新票券
      Route::patch('products/{id}',[\App\Http\Controllers\AdminProductController::class,'update'])->name('admin.products.update');
+     //刪除(下架)票券
      Route::get('products/{id}',[\App\Http\Controllers\AdminProductController::class,'delete'])->name('admin.products.delete');
+
+     //查閱會員我的最愛
+     Route::get('favorites', [\App\Http\Controllers\AdminFavoriteController::class, 'index'])->name('admin.favorites.index');
+
 });
 
