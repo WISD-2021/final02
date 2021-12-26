@@ -14,6 +14,7 @@ class Order extends Model
         'member_id',
         'product_id',
         'total' ,
+        'quan',
         'date' ,
         'status' ,
     ];

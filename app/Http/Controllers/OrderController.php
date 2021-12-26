@@ -31,18 +31,41 @@ class OrderController extends Controller
 
     }
     public  function  use($id){
+      $q=DB::table('orders')->where('id',$id)->get();
+        foreach ($q as $qs)
+        {
+            $quan=$qs->quan;//取買了幾張票
 
+        }
+        if($quan==1){ //剩下最後一張且要使用時
+
+            DB::table('orders')->where('id',$id)->update(
+                [
+
+                    'status'=>1,//全部使用完了所以狀態為1
+                    'quan'=>0//全部使用完了所以數量歸零
+
+
+
+
+
+                ]
+            );
+        }
+       else {
+           $quan=$quan-1;//使用一張後數量減1
         DB::table('orders')->where('id',$id)->update(
             [
 
 
 
-                'status'=>1
+
+                'quan'=>$quan,//更新能使用的數量
 
 
             ]
-        );
-        $data = DB::table('orders')->get();;
+        );}
+        $data = DB::table('orders')->get();
         $p_data = DB::table('products')->get();
         return view('orders', ['order' => $data],['product'=> $p_data]);
     }
@@ -78,6 +101,7 @@ class OrderController extends Controller
                         'member_id'=>auth()->user()->id,
                         'product_id'=>$id,
                         'total'=> $_SESSION['total'],
+                        'quan'=>$_SESSION['qu1'],
                         'date'=>date('Y/m/d'),
                         'status'=>0
 

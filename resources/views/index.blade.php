@@ -1,11 +1,15 @@
 @extends('layouts.master')
 <header>
+
+
+
     <nav class="navbar navbar-expand-md navbar-dark fixed-top"  style="background-color: lavender">
         <div class="container-fluid" >
             <a class="container">
                 <a style="font-size:50px;color: #6b7280">ゆずのチケット</a>
 
             </a>
+
 
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
