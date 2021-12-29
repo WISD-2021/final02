@@ -17,8 +17,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $data = DB::table('orders')->get();;
-        $p_data = DB::table('products')->get();
+        $data = DB::table('orders')->orderBy('id','ASC')->get();;
+        $p_data = DB::table('products')->orderBy('id','ASC')->get();
         return view('orders', ['order' => $data],['product'=> $p_data]);
     }
     public function searchstatus($status)
@@ -95,10 +95,16 @@ class OrderController extends Controller
         if(\Illuminate\Support\Facades\Auth::check())
         {
                session_start();
+               $member = DB::table('members')->orderBy('id','ASC')->get();
+               foreach($member as $members)
+               {
+                    if(auth()->user()->id==$members->user_id)
+                        $member_id=$members->id;
+               }
                 DB::table('orders')->insert(
                     [
 
-                        'member_id'=>auth()->user()->id,
+                        'member_id'=>$member_id,
                         'product_id'=>$id,
                         'total'=> $_SESSION['total'],
                         'quan'=>$_SESSION['qu1'],
