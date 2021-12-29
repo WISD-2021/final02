@@ -16,7 +16,7 @@
             float:left;
 
             margin-left:5%;
-
+            margin-right:5%;
             margin-top:2%;
             margin-bottom:2%;
 
