@@ -18,7 +18,7 @@ class FavoriteController extends Controller
     {
         if(\Illuminate\Support\Facades\Auth::check())
         {
-            $data = DB::table('favorites')->where('member_id',auth()->user()->id)->get();
+            $data = DB::table('favorites')->orderBy('id','ASC')->get();
             $p_data = DB::table('products')->get();
             return view('favorite', ['favorite' => $data],['product'=> $p_data]);
         }
@@ -61,11 +61,17 @@ class FavoriteController extends Controller
                if($dates->member_id==auth()->user()->id)
                    $addOK=1;
            }
+           $member = DB::table('members')->orderBy('id','ASC')->get();
+           foreach($member as $members)
+           {
+               if(auth()->user()->id==$members->user_id)
+                   $member_id=$members->id;
+           }
            if ($addOK==0){
              DB::table('favorites')->insert(
              [
 
-                'member_id'=>auth()->user()->id,
+                'member_id'=>$member_id,
                 'product_id'=>$id
 
              ]
