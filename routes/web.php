@@ -71,5 +71,7 @@ Route::prefix('admin')->group(function () {
      //查閱會員訂單
      Route::get('orders', [\App\Http\Controllers\AdminOrderController::class, 'index'])->name('admin.orders.index');
 
+     //查閱會員訂單
+     Route::get('members', [\App\Http\Controllers\AdminMemberController::class, 'index'])->name('admin.members.index');
 });
 

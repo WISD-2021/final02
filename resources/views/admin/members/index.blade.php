@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                我的最愛管理 <small>所有我的最愛列表</small>
+                會員管理 <small>所有會員列表</small>
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-edit"></i> 我的最愛管理
+                    <i class="fa fa-edit"></i> 會員管理
                 </li>
             </ol>
         </div>
@@ -32,31 +32,22 @@
                     <tr>
                         <th width="70" style="text-align: center">編號</th>
                         <th width="100" style="text-align: center">會員名稱</th>
-                        <th>票券名稱</th>
-                        <th width="70" style="text-align: center">定價</th>
-                        <th width="70" style="text-align: center">庫存</th>
+                        <th>電子郵件 Email</th>
+                        <th width="70" style="text-align: center">電話</th>
+                        <th width="150" style="text-align: center">加入時間</th>
                        <!-- <th width="150" style="text-align: center">新增時間</th>-->
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($favorite as $favorites)
+                    @foreach($member as $members)
                         <tr>
-                            <td style="text-align: center">{{ $favorites->id }}</td>
-
+                            <td style="text-align: center">{{ $members->id }}</td>
                             @foreach($user as $users)
-                                @if($favorites->member_id == $users->id)
-                                     <td style="text-align: center">{{ $users->name }}</td>
-                                @endif
-                            @endforeach
-
-                            <?php
-                            $product = DB::table('products')->orderBy('id','ASC')->get();?>
-
-                            @foreach($product as $products)
-                                @if($favorites->product_id == $products->id)
-                                    <td>{{ $products->name }}</td>
-                                    <td style="text-align: center">{{ $products->price }}</td>
-                                    <td style="text-align: center">{{ $products->quan }}</td>
+                                @if($members->user_id == $users->id)
+                                    <td style="text-align: center">{{ $users->name }}</td>
+                                    <td>{{ $users->email}}</td>
+                                    <td>{{ $members->tel }}</td>
+                                    <td>{{ $users->created_at }}</td>
                                 @endif
                             @endforeach
                         </tr>
