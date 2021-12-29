@@ -73,13 +73,12 @@
                                 <div>
                                     <h3> 票券名稱: <a>{{$products->name}}</a></h3><br>
                                     <h4> 單價:<a>{{$products->price}}</a></h4><br>
-                                    <h4>數量:<a>{{$products->quan}}</a></h4><br>
                                     詳細資料:  <p class="card-text">{{$products->content}}</p>
                                     <div class="t_div" >
 
                                         <img class="t_img" src="../img/ticket/{{$products->pic}}"><br>
                                         <div class="icon3">
-                                            <form action=''>
+                                            <form method="GET"  action='{{route('car.add',$products->id)}}'>
                                                 <button class="btn btn-outline-dark" type="submit" style="background-color: lavender" >
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
