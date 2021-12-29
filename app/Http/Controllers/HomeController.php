@@ -24,19 +24,21 @@ class HomeController extends Controller
         if(\Illuminate\Support\Facades\Auth::check()){
             if(auth()->user()->type==0)
             {
-                $m_data = DB::table('members')->get();//取得目前的members資料表
+                $m_data = DB::table('members')->orderBy('id','ASC')->get();//取得目前的members資料表
                 foreach ($m_data as $m_datas){//判斷目前的members資料表有沒有該使用者
-                    $uid=$m_datas->user_id;
-                    if($uid==auth()->user()->id){
+                   // $uid=$m_datas->user_id;
+
+                    if($m_datas->user_id==auth()->user()->id){
 
                         $aru=1;//有的話為1
+                        break;
                     }
                     else{
                         $aru=0;//沒有為0
                         $mytel = $this->random_string(9, "0123456789");
                         $tel='0'.$mytel;
                         }
-                }
+               }
                if($aru==0){//如果沒有就新增
 
                 DB::table('members')->insert(
@@ -49,6 +51,7 @@ class HomeController extends Controller
                     ]
                 );
                             }
+
             }
         }
         $data = DB::table('products')->get();
