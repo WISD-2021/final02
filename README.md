@@ -11,31 +11,31 @@
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/erd2.jpg)
 
 # 資料表欄位設計
-# 使用者資料表
+## 使用者資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t1.jpg)
-# 會員資料表
+## 會員資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t2.jpg)
-# 管理者資料表
+## 管理者資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t3.jpg)
-# 購物車商品資料表
+## 購物車商品資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t4.jpg)
-# 訂單資料表
+## 訂單資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t5.jpg)
-# 商品資料表
+## 商品資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t6.jpg)
-# 我的最愛資料表
+## 我的最愛資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t7.jpg)
 
 # 系統主要功能
 * 會員:
-- **會員能以關鍵字或類別查詢票劵**
-- **會員將票劵加入購物車、並對購物車票券進行刪除或修改**
-- **會員可以查看訂單紀錄**
-- **會員可以將票劵加入我的最愛，或對其刪除**
-- **會員可在待使用票券頁面使用票券**
+    * 會員能以關鍵字或類別查詢票劵
+  * 會員將票劵加入購物車、並對購物車票券進行刪除或修改
+  * 會員可以查看訂單紀錄
+  * 會員可以將票劵加入我的最愛，或對其刪除
+  * 會員可在待使用票券頁面使用票券
 * 管理者:
-- **管理者可以查看會員資料、訂單資料、我的最愛資料以及票券資料**
-- **管理者可以新增、上下架票券，或對其刪除、修改**
+    * 管理者可以查看會員資料、訂單資料、我的最愛資料以及票券資料
+  * 管理者可以新增、上下架票券，或對其刪除、修改
 
 # 網站安裝(系統復原步驟)
 1. 複製 https://github.com/WISD-2021/final02.git本系統在GitHub的專案
