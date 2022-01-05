@@ -1,32 +1,32 @@
-#首頁
+# 首頁
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/home1.jpg)
 
-#管理者頁面
+# 管理者頁面
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/home2.jpg)
 
-#ERD
+# ERD
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/erd1.jpg)
 
-#資料庫綱要圖
+# 資料庫綱要圖
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/erd2.jpg)
 
-#資料表欄位設計
-#使用者資料表
+# 資料表欄位設計
+# 使用者資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t1.jpg)
-#會員資料表
+# 會員資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t2.jpg)
-#管理者資料表
+# 管理者資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t3.jpg)
-#購物車商品資料表
+# 購物車商品資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t4.jpg)
-#訂單資料表
+# 訂單資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t5.jpg)
-#商品資料表
+# 商品資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t6.jpg)
-#我的最愛資料表
+# 我的最愛資料表
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/t7.jpg)
 
-#系統主要功能
+# 系統主要功能
 * 會員:
 - **會員能以關鍵字或類別查詢票劵**
 - **會員將票劵加入購物車、並對購物車票券進行刪除或修改**
@@ -37,7 +37,7 @@
 - **管理者可以查看會員資料、訂單資料、我的最愛資料以及票券資料**
 - **管理者可以新增、上下架票券，或對其刪除、修改**
 
-#網站安裝(系統復原步驟)
+# 網站安裝(系統復原步驟)
 1. 複製 https://github.com/WISD-2021/final02.git本系統在GitHub的專案
 - **打開 Source tree，點選 Clone 後，輸入以下資料Source Path:https://github.com/WISD-2021/final02.git Destination Path:C:\wagon\uwamp\www\final02 打開cmder，切換至專案所在資料夾，cd final02**
 
@@ -66,20 +66,20 @@
 
 6. 在UwAmp下，點選Apache config，選擇port 8000 ，並在Document Root 輸入{DOCUMENTPATH}/final02/public
 
-#初始專案與DB負責的同學
+# 初始專案與DB負責的同學
 * 初級專案建置：[3A832069 邱琳恩](http://github.com/3A832069)
 * 資料庫關聯：[3A832069 邱琳恩](http://github.com/3A832069)
 
-#系統使用帳號(使用者資料)
+# 系統使用帳號(使用者資料)
 * 前台-會員 帳號：test2@gmail.com  密碼：87654321
 * 後台-管理者 帳號：admin@gmail.com 密碼：123456789
 
-#系統開發人員
+# 系統開發人員
 * [3A832069 邱琳恩](http://github.com/3A832069)
 * [3A832045 陳筠凡](http://github.com/3A832045)
 
-#工作分配
-#前台：[3A832069 邱琳恩](http://github.com/3A832069)
+# 工作分配
+# 前台：[3A832069 邱琳恩](http://github.com/3A832069)
 * // 首頁
   * Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home.index');
 * // 商品頁面
@@ -110,7 +110,7 @@
     * Route::get('/order/{status}', [\App\Http\Controllers\OrderController::class, 'searchstatus'])->name('order.searchstatus');
 * // 使用票劵
     * Route::get('/orderuse/{id}', [\App\Http\Controllers\OrderController::class, 'use'])->name('order.use');
-#後台：[3A832045 陳筠凡](http://github.com/3A832045)
+# 後台：[3A832045 陳筠凡](http://github.com/3A832045)
   * Route::prefix('admin')->group(function () {
 * // 主控台
     * Route::get('/', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard.index');
