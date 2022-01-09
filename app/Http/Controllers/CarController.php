@@ -19,7 +19,13 @@ class CarController extends Controller
     {
         if(\Illuminate\Support\Facades\Auth::check())
         {
-        $data = DB::table('cars')->where('member_id',auth()->user()->id)->get();
+            $member = DB::table('members')->orderBy('id','ASC')->get();
+            foreach($member as $members)
+            {
+                if(auth()->user()->id==$members->user_id)
+                    $member_id=$members->id;
+            }
+        $data = DB::table('cars')->where('member_id',$member_id)->get();
         $p_data = DB::table('products')->get();
         return view('car', ['car' => $data],['product'=> $p_data]);
         }
@@ -57,10 +63,16 @@ class CarController extends Controller
         $addOK=0; //避免重複的商品
         if(\Illuminate\Support\Facades\Auth::check())
         {
+            $member = DB::table('members')->orderBy('id','ASC')->get();
+            foreach($member as $members)
+            {
+                if(auth()->user()->id==$members->user_id)
+                    $member_id=$members->id;
+            }
             $data = DB::table('cars')->where('product_id',$id)->get();
             foreach ($data as $dates)
             {
-                if($dates->member_id==auth()->user()->id)
+                if($dates->member_id==$member_id)
                     $addOK=1;
             }
 
@@ -68,7 +80,7 @@ class CarController extends Controller
                 DB::table('cars')->insert(
                     [
 
-                        'member_id'=>auth()->user()->id,
+                        'member_id'=>$member_id,
                         'product_id'=>$id,
                         'quan'=>1
 

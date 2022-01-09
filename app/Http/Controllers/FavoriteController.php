@@ -55,18 +55,20 @@ class FavoriteController extends Controller
           $addOK=0; //讓我的最愛裡不會有重複的商品
           if(\Illuminate\Support\Facades\Auth::check())
        {
-           $data = DB::table('favorites')->where('product_id',$id)->get();
-           foreach ($data as $dates)
-           {
-               if($dates->member_id==auth()->user()->id)
-                   $addOK=1;
-           }
            $member = DB::table('members')->orderBy('id','ASC')->get();
            foreach($member as $members)
            {
                if(auth()->user()->id==$members->user_id)
                    $member_id=$members->id;
            }
+
+           $data = DB::table('favorites')->where('product_id',$id)->get();
+           foreach ($data as $dates)
+           {
+               if($dates->member_id==$member_id)
+                   $addOK=1;
+           }
+
            if ($addOK==0){
              DB::table('favorites')->insert(
              [
