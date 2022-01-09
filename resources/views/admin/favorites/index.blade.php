@@ -42,13 +42,18 @@
                     @foreach($favorite as $favorites)
                         <tr>
                             <td style="text-align: center">{{ $favorites->id }}</td>
+                            <?php
+                            $member = DB::table('members')->orderBy('id','ASC')->get();?>
 
-                            @foreach($user as $users)
-                                @if($favorites->member_id == $users->id)
-                                     <td style="text-align: center">{{ $users->name }}</td>
-                                @endif
+                            @foreach($member as $members)
+                                @foreach($user as $users)
+                                    @if($favorites->member_id == $members->id)
+                                        @if($members->user_id ==  $users->id)
+                                            <td style="text-align: center">{{ $users->name }}</td>
+                                        @endif
+                                    @endif
+                                @endforeach
                             @endforeach
-
                             <?php
                             $product = DB::table('products')->orderBy('id','ASC')->get();?>
 

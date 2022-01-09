@@ -36,7 +36,7 @@
                         <th width="70" style="text-align: center">定價</th>
                         <th width="70" style="text-align: center">數量</th>
                         <th width="70" style="text-align: center">總計</th>
-                       <!-- <th width="150" style="text-align: center">新增時間</th>-->
+                        <th width="120" style="text-align: center">訂單日期</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -68,6 +68,7 @@
                                         echo "<td style='text-align: center'>$q</td>";
                                     ?>
                                     <td style="text-align: center">{{ $orders->total }}</td>
+                                    <td style="text-align: center">{{ $orders->date }}</td>
                                 @endif
                             @endforeach
                         </tr>

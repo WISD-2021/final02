@@ -26,9 +26,7 @@
         </div>
     </div>
 </div>
-<!-- /.row -->
-
-<div class="row">
+<!-- /.row --><div class="row">
     <div class="col-lg-12">
         <form action="/admin/products" method="POST" role="form">
             @method('POST')
@@ -66,11 +64,11 @@
 
             <div class="form-group">
                 <label for="status">票券狀態：</label>
-                    <label class="radio-inline" for="t1">
-                        <input type="radio" name="status" id="0" value="0">未上架
-                    </label>
+                <label class="radio-inline" for="t1">
+                    <input type="radio" name="status" id="0" value="0">未上架
+                </label>
                 <label class="radio-inline" for="t2">
-                       <input type="radio" name="status" id="1" value="1">已上架
+                    <input type="radio" name="status" id="1" value="1">已上架
                 </label>
             </div>
 
@@ -85,5 +83,7 @@
         </form>
     </div>
 </div>
+
+
 <!-- /.row -->
 @endsection
