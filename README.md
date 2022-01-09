@@ -99,6 +99,9 @@
 * 前台-會員 帳號：test2@gmail.com  密碼：87654321
 * 後台-管理者 帳號：admin@gmail.com 密碼：123456789
 
+# 系統測試資料存放位置
+* final02底下的sql資料夾
+
 # 系統開發人員
 * [3A832069 邱琳恩](http://github.com/3A832069)
 * [3A832045 陳筠凡](http://github.com/3A832045)
