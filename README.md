@@ -20,7 +20,7 @@
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/home2.jpg)
 
 # 新增票券
-![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/coupon_crate.png)
+![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/coupon_create.png)
 
 # 編輯票券
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/coupon_edit.png)
@@ -93,7 +93,7 @@
 # 初始專案與DB負責的同學
 * 初級專案建置：[3A832069 邱琳恩](http://github.com/3A832069)
 * 資料庫關聯：[3A832069 邱琳恩](http://github.com/3A832069)
-* 資料建置：[3A832045 陳筠凡](http://github.com/3A832045)
+* 資料庫資料建置：[3A832045 陳筠凡](http://github.com/3A832045)
 
 # 系統使用帳號(使用者資料)
 * 前台-會員 帳號：test2@gmail.com  密碼：87654321
