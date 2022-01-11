@@ -75,7 +75,9 @@
                     </div>
                     <div class="icon3">
                         <form  method="GET"  action='{{route('car.check',$carts->id)}}'>
-                            <h4>數量:<input type='number' name='qu' step='1' min='1' max='10' value={{$carts->quan}}></h4><br>
+                            <?php
+                                echo "<h4>數量:<input type='number' name='qu' step='1' min='1' max='".$products->quan."' value=$carts->quan></h4><br>"
+                            ?>
                             <button class="btn btn-outline-dark" type="submit" style="background-color: lavender" >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>

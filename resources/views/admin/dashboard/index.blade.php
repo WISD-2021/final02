@@ -31,6 +31,23 @@
             </div>
         @endif
     @endforeach
+    @foreach($product as $products)
+        @if($products->quan<3 && $products->quan!==0)
+                <div class="col-lg-12">
+                    <div class="alert alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <i class="fa fa-info-circle"></i>  <strong>通知！</strong>{{ $products->name }}庫存過低，請盡快補貨!
+                    </div>
+                </div>
+        @elseif($products->quan==0)
+                <div class="col-lg-12">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <i class="fa fa-info-circle"></i>  <strong>通知！</strong>{{ $products->name }}無庫存，請盡快補貨!
+                    </div>
+                </div>
+        @endif
+    @endforeach
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>

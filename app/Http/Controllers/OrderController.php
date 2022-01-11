@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Product;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
@@ -114,7 +115,13 @@ class OrderController extends Controller
 
                     ]
                 );
-            Car::destroy($_SESSION['c_id']);
+              $product=Product::find($id);
+
+              $q=($product->quan)-$_SESSION['qu1'];
+
+              $product->update(['quan'=>$q]);
+
+              Car::destroy($_SESSION['c_id']);
 //            $_SESSION['c_id']=0;
 //            $_SESSION['total']=0;
 //            $_SESSION['qu1']=0;
