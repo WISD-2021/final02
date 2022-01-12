@@ -24,6 +24,7 @@
 
 # 編輯票券
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/coupon_edit.png)
+![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/coupon_edit2.png)
 
 # 刪除票券
 ![image](https://raw.githubusercontent.com/WISD-2021/final02/master/public/img/coupon_delete.png)
