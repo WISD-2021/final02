@@ -61,8 +61,11 @@
 
             <div class="form-group">
                 <label for="pic">票券圖片：</label>
-                <input name="pic" class="form-control" placeholder="票券圖片" value="{{old('name',$product->pic)}}">
+                <img class="t_img" src="/../../img/ticket/{{$product->pic}}">
+                <input type='file' name='pic' value="{{old('pic',$product->pic)}}">
+                <!--<input name="pic" class="form-control" placeholder="票券圖片" value="{{old('name',$product->pic)}}">-->
             </div>
+
 
             @if($product->status==0)
                 <div class="form-group">
@@ -85,9 +88,9 @@
                     </label>
                 </div>
             @endif
-
+            <button type="submit" class="btn btn-success">更新</button>
             <div class="text-right">
-                <button type="submit" class="btn btn-success">更新</button>
+
             </div>
 
         </form>

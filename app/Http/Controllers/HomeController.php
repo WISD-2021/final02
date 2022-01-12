@@ -53,6 +53,10 @@ class HomeController extends Controller
                             }
 
             }
+            else if(auth()->user()->type==1)
+            {
+                return view('admin.dashboard.index');
+            }
         }
         $data = DB::table('products')->get();
         return view('index', ['product' => $data]);

@@ -58,7 +58,8 @@
 
             <div class="form-group">
                 <label for="pic">票券圖片：</label>
-                <input name="pic" class="form-control" placeholder="票券圖片" value="{{old('name')}}">
+                <input type='file' name='pic' value="{{old('pic')}}">
+                <!--<input name="pic" class="form-control" placeholder="票券圖片" value="{{old('name')}}">-->
             </div>
 
 
